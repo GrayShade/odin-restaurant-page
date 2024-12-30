@@ -39,16 +39,16 @@ body {
   align-items: center;
   /* overflow: visible; */
   height: 100vh;
-
 }
 
 header {
-  height: 5%;
+  min-height: 5%;
   background-color: grey;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   width: 100%;
+  flex-shrink: 0;
   background: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 

@@ -2,7 +2,7 @@ import { styles } from "./styles/styles.css"
 import { reset } from "./styles/reset.css"
 // import {Home} from "./home.js";
 import { createHomeContent } from "./home.js";
-import { createMenuContent, Menu } from "./menu.js"
+import { createMenuContent } from "./menu.js"
 import { About } from "./about.js"
 
 class Controller {
@@ -12,8 +12,6 @@ class Controller {
   }
 
   start() {
-    // this.setObjects();
-
     this.applyCurrentTabStyle();
     createHomeContent();
     this.setUpEventListeners();
@@ -28,7 +26,6 @@ class Controller {
         console.log('in index.js listener...');
         this.applyCurrentTabStyle(e);
         this.clearContent();
-        // this.homeObj.createHomeContent();
         switch (e.target.id) {
           case 'homeTab-btn':
             createHomeContent();
@@ -37,11 +34,9 @@ class Controller {
             this.setUpBookingBtnListener();
             break;
           case 'menuTab-btn':
-            // alert('menu-btn');
             createMenuContent();
             break;
           case 'aboutTab-btn':
-            // alert('about-btn');
             break;
         };
        
@@ -66,23 +61,22 @@ class Controller {
 
     let tabBtnsArr = document.querySelectorAll('.tab-btn');
     for (let i = 0; i < tabBtnsArr.length; i++) {
-      // for styling tab buttons:
+      // for styling current tab button:
       if (tabBtnsArr[i].id == currEleId) {
         tabBtnsArr[i].style.background = '#add8e6';
-        // tabBtnsArr[i].style.color = '#4682b4';
       }
-      // for styling menu button:
+      // for styling menu tab button on clicking book button:
       else if (currEleId == 'home-booking-btn') {
         tabBtnsArr[1].style.background = '#add8e6';
         tabBtnsArr[0].style.background = '';
         tabBtnsArr[2].style.color = '#69717a';
       }
+      // for styling current tab button:
       else {
         tabBtnsArr[i].style.background = '';
         tabBtnsArr[i].style.color = '#69717a';
       }
     }
-
   }
 
   clearContent() {
@@ -102,5 +96,4 @@ class Controller {
 
 
 let ControllerObj = new Controller();
-// ControllerObj.setUpTabListeners();
 ControllerObj.start();
