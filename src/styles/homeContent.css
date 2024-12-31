@@ -13,23 +13,23 @@
   overflow: auto;
 }
 
-.home-con .home-h1 {
+.home-h1 {
   margin: 0% 0% 1%;
   color: #20b2aa;
 }
 
-.home-con .home-p {
+.home-p {
   text-align: center;
   width: 98%;
   font-style: italic;
 }
 
-.home-con #home-p1Ele {
+#home-p1Ele {
   font-family: serif;
   font-size: 1.6rem;
 }
 
-.home-con #home-booking-btn {
+#home-booking-btn {
   padding: 15px 35px;
   margin: 1% 0%;
   border-radius: 20px;
@@ -39,11 +39,11 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.home-con #home-booking-btn:active {
+#home-booking-btn:active {
   transform: translateY(4px);
 }
 
-.home-con #home-booking-btn:hover {
+#home-booking-btn:hover {
   cursor: pointer;
   background: palegreen;
 }

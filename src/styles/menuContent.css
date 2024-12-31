@@ -1,12 +1,27 @@
 .menu-con {
-  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27.6rem, 0fr));
+  column-gap: 1.2rem;
+  row-gap: 1.3rem;
+  justify-content: start;
+  justify-items: start;
   height: 95%;
   width: 100%;
   flex-direction: column;
   color: #69717a;
-  align-items: center;
-  padding: 0% 20% 0%;
+  padding: 0% 0% 0% 20%;
   background: linear-gradient(to top, #dfe9f3 0%, white 100%);
   overflow: auto;
 }
 
+.card {
+  height: 12.9rem;
+  min-width: 100%;
+  border: 1px solid grey;
+}
+
+.card-left-div {
+  border: 1px solid grey;
+  width: 40%;
+  height: 100%;
+}

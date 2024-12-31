@@ -11,6 +11,22 @@ class Menu {
     // In that specific class file, remember to use specific names for all elements to
     // not conflict with general css files of page.
     document.getElementById('content').setAttribute('class', 'menu-con');
+
+    let menuConEle = document.querySelector('.menu-con')
+    for(let i=1; i<=6; i++) {
+    let card = document.createElement('div');
+    card.setAttribute('id', `card${i}`);
+    card.setAttribute('class', 'card');
+    menuConEle.appendChild(card);
+    let cardLeftDiv = document.createElement('div');
+    cardLeftDiv.setAttribute('class', 'card-left-div');
+    card.appendChild(cardLeftDiv);
+    let cardRightDiv = document.createElement('div');
+    cardRightDiv.setAttribute('class', 'card-right-div');
+    card.appendChild(cardRightDiv);
+    }
+    
+
   }
 }
 
