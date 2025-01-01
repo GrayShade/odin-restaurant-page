@@ -3,6 +3,7 @@ import { reset } from "./styles/reset.css"
 // import {Home} from "./home.js";
 import { createHomeContent } from "./home.js";
 import { createMenuContent } from "./menu.js"
+import { createCards } from "./menu.js"
 import { About } from "./about.js"
 
 class Controller {
@@ -35,6 +36,7 @@ class Controller {
             break;
           case 'menuTab-btn':
             createMenuContent();
+             createCards();
             break;
           case 'aboutTab-btn':
             break;
@@ -89,6 +91,7 @@ class Controller {
       this.clearContent();
       this.applyCurrentTabStyle(e);
       createMenuContent();
+      createCards();
     });
   }
 

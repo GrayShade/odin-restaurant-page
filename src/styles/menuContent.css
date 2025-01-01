@@ -1,17 +1,26 @@
 .menu-con {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(27.6rem, 0fr));
   column-gap: 1.2rem;
   row-gap: 1.3rem;
-  justify-content: start;
-  justify-items: start;
+  justify-content: center;
   height: 95%;
   width: 100%;
-  flex-direction: column;
   color: #69717a;
-  padding: 0% 0% 0% 20%;
   background: linear-gradient(to top, #dfe9f3 0%, white 100%);
   overflow: auto;
+}
+
+#card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27.6rem, 0fr));
+  column-gap: 2%;
+  row-gap: 1.3rem;
+  height: fit-content;
+  max-width: 85rem;
+  color: #69717a;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
