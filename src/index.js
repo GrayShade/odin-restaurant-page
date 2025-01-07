@@ -91,7 +91,6 @@ class Controller {
       this.clearContent();
       this.applyCurrentTabStyle(e);
       createMenuContent();
-      // createCards();
     });
   }
 

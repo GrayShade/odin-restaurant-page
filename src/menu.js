@@ -1,5 +1,5 @@
 // import styles from "./styles/styles.css"
-import { reset } from "./styles/reset.css";
+// import { reset } from "./styles/reset.css";
 import { menuContent } from "./styles/menuContent.css";
 import image1 from "./images/menu-images/1.jpg";
 import image2 from "./images/menu-images/2.jpg";
@@ -76,8 +76,6 @@ class Menu {
     }
   }
 
-
-
   static #createCardLeftDiv(i, imagesObj) {
 
     const card = document.getElementById(`card${i}`);
@@ -87,8 +85,20 @@ class Menu {
 
     let image = document.createElement('img');
     image.setAttribute('class', 'menu-card-images');
-    image.setAttribute('src', imagesObj[`image${i}`]);
+    // image.setAttribute('src', imagesObj[`image${i}`]);
+    let imageSource = imagesObj[`image${i}`];
+    image.style.background = `url(${imageSource}) no-repeat center center`;
+    image.style.backgroundSize = 'cover';
     cardLeftDiv.appendChild(image);
+
+    let creditDiv = document.createElement('div');
+    creditDiv.setAttribute('id', 'img-credit');
+    creditDiv.setAttribute('class', 'img-credit');
+    cardLeftDiv.appendChild(creditDiv);
+    
+    let creditTxt = document.createElement('p');
+    creditTxt.textContent = 'Credit';
+    creditDiv.appendChild(creditTxt);
   }
 
   static #createCardRightDiv(i, card) {
@@ -168,55 +178,64 @@ class Menu {
         'Fresh Juice',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
         '50 PKR',
-        '20 min'
+        '20 min',
+        'Photo by <a href="https://unsplash.com/@osamabgid?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">osama bgid</a> on <a href="https://unsplash.com/photos/orange-juice-in-clear-drinking-glass-pZ_slUF1YCc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
       ],
       'image2': [
         'Healthy Breakfast',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
         '50 PKR',
-        '30 min'
+        '30 min',
+        'Photo by <a href="https://unsplash.com/@tssskate?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Kate Tsventoukh 🇺🇦</a> on <a href="https://unsplash.com/photos/a-plate-of-food-and-a-cup-of-coffee-Xa0Dl96QgLs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
       ],
       'image3': [
         'Mix Beans',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
         '50 PKR',
-        '40 min'
+        '40 min',
+        'Photo by <a href="https://unsplash.com/@edgarraw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Odiseo Castrejon</a> on <a href="https://unsplash.com/photos/silver-spoon-on-black-ceramic-bowl-with-vegetables-1SPu0KT-Ejg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
       ],
       'image4': [
         'Zinger Burger',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
         '50 PKR',
-        '20 min'
+        '20 min',
+        'Photo by <a href="https://unsplash.com/@osamabgid?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">osama bgid</a> on <a href="https://unsplash.com/photos/cooked-food-on-white-ceramic-plate-HAnIYIboEMQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
       ],
       'image5': [
         'Soothing Coffee',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
         '50 PKR',
-        '20 min'
+        '20 min',
+        'Photo by <a href="https://unsplash.com/@brigittetohm?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Brigitte Tohm</a> on <a href="https://unsplash.com/photos/white-ceramic-mug-beside-green-leaves-yRH0JI2S2KA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
       ],
       'image6': [
         'Special Pizza',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
         '50 PKR',
-        '20 min'
+        '20 min',
+        'Photo by <a href="https://unsplash.com/@bahrambayat?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Bahram Bayat</a> on <a href="https://unsplash.com/photos/basil-and-cheese-pizza-5t4D2h3lZ74?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
       ],
       'image7': [
         'Mix Fries',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
         '50 PKR',
-        '20 min'
+        '20 min',
+        'Photo by <a href="https://unsplash.com/@pixzolo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Pixzolo Photography</a> on <a href="https://unsplash.com/photos/fries-and-ketchup-8YBHgP0WrEo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
       ],
       'image8': [
         'Chicken Nuggets',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
         '50 PKR',
-        '20 min'
+        '20 min',
+        'Photo by <a href="https://unsplash.com/@likemeat?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">LikeMeat</a> on <a href="https://unsplash.com/photos/fried-meat-with-green-vegetable-on-black-pan-xWm1DjCkUzU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
       ],
       'image9': [
         'Fresh Salad',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
         '50 PKR',
-        '20 min'
+        '20 min',
+        'Photo by <a href="https://unsplash.com/@dovilerm?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Dovile Ramoskaite</a> on <a href="https://unsplash.com/photos/strawberry-salad-plate-xX9SmqQCbFY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
       ],
 
     }

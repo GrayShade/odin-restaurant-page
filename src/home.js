@@ -1,13 +1,11 @@
 // import styles from "./styles/styles.css"
-import { reset } from "./styles/reset.css"
+// import { reset } from "./styles/reset.css"
 import { homeContent } from "./styles/homeContent.css"
 import img1 from "./images/1.jpg"
 import img2 from "./images/2.jpg"
 
 class Home {
   createHomeContent() {
-
-    // document.getElementById('content').setAttribute('id', 'home-content');
 
     let content = document.getElementById('content');
     // As we are switching tabs by replacing content div in body but page remains same.
@@ -19,7 +17,6 @@ class Home {
     content.setAttribute('class', 'home-con');
 
     let h1Ele = document.createElement('h1');
-    // h1Ele.setAttribute('id', 'h1');
     h1Ele.textContent = 'A Surreal Experience...';
     content.appendChild(h1Ele);
 
@@ -37,11 +34,6 @@ class Home {
       & long for it again. Eating in a natural cozy environment with birds chirping around & no 
       traffic , no crowds around till miles. Just you & something special you ordered.`;
     content.appendChild(p2Ele);
-    // <div id="images">
-    //   <img src="./images/1.jpg" alt="">
-    // </div>
-
-
 
     let homeBookingBtn = document.createElement('button');
     homeBookingBtn.setAttribute('id', 'home-booking-btn');
@@ -62,13 +54,6 @@ class Home {
 
 
   }
-  // redirectToMenu() {
-  //   let bookingButton = document.getElementById('home-booking-btn');
-  //   bookingButton.addEventListener('click', (e) => {
-  //     this.clearContent();
-  //     this.createMenuContent();
-  //   });
-  // }
 }
 
 export const { createHomeContent } = new Home();
