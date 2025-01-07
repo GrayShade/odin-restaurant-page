@@ -83,3 +83,24 @@ nav {
 /* .tab-btn:focus {
   background-color: silver;
 } */
+
+#content h1 {
+  margin: 2% 0% 1%;
+  /* font-size: 1.5em; */
+  font-family: serif;
+    font-style: italic;
+  color: #20b2aa;
+  justify-self: center;
+}
+
+.quote {
+  font-family: serif;
+  font-size: 1.6rem;
+  font-style: italic;
+}
+
+/* #home-p {
+  text-align: center;
+  width: 98%;
+  font-style: italic;
+} */

@@ -13,20 +13,16 @@
   overflow: auto;
 }
 
-.home-h1 {
-  margin: 0% 0% 1%;
+.home-con h1 {
+  /* margin: 2% 0% 1%;
   color: #20b2aa;
+  justify-self: center; */
 }
 
-.home-p {
+#home-p {
   text-align: center;
   width: 98%;
   font-style: italic;
-}
-
-#home-p1Ele {
-  font-family: serif;
-  font-size: 1.6rem;
 }
 
 #home-booking-btn {

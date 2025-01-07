@@ -1,5 +1,6 @@
 .menu-con {
   display: grid;
+  grid-template-rows: 1fr 5fr;
   column-gap: 1.2rem;
   row-gap: 1.3rem;
   justify-content: center;
@@ -8,29 +9,106 @@
   color: #69717a;
   background: linear-gradient(to top, #dfe9f3 0%, white 100%);
   overflow: auto;
+  /* justify-items: center; */
+  font-size: 1.5em;
 }
 
-#card-container {
+.menu-con #para-container {
+  padding: 0% 2.6rem;
+  text-align: center;
+}
+
+
+.menu-con #card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(27.6rem, 0fr));
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 0fr));
   column-gap: 2%;
   row-gap: 1.3rem;
   height: fit-content;
-  max-width: 85rem;
+  max-width: 100rem;
   color: #69717a;
   overflow: auto;
   justify-content: center;
   align-items: center;
+  padding-bottom: 0.3rem;
+}
+
+.menu-con .card {
+  height: 12.9rem;
+  min-width: 100%;
+  border: 1px solid #d3d3d3;
+  border-radius: 20px;
+}
+
+.menu-con .card-left-div {
+  display: flex;
+  /* border: 1px solid grey; */
+  width: 40%;
+  height: 100%;
+}
+
+.menu-con .menu-card-images {
+  width: 100%;
 }
 
 .card {
-  height: 12.9rem;
-  min-width: 100%;
-  border: 1px solid grey;
+  display: flex;
 }
 
-.card-left-div {
-  border: 1px solid grey;
-  width: 40%;
+.card-right-div {
+  display: flex;
+  width: 60%;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.card-r-desc {
+  font-size: 1.1rem;
+  margin-top: 0.3rem;
+}
+
+.card-r-desc {
+  font-weight: lighter;
+}
+
+.card-r-title,
+.price-span,
+.avail-span {
+  /* font-size: normal; */  
+  font-style: italic;
+  
+}
+
+.card-r-title {
+  color: #f08080;
+  font-family: serif;
+}
+
+.price-span,
+.avail-span {
+  color: #8fbc8f;
+  font-weight: bold;
+  font-family: monospace;
+  padding-right: 0.5rem;
+}
+
+.tags-div {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  justify-content: flex-end;
+  font-size: 0.7em;
+  /* font-style: italic; */
+
+}
+
+.tags-div > p {
+  font-family: monospace;
+  color: grey;
+  font-weight: lighter;
+  display: flex;
+  justify-content: space-between;
 }
