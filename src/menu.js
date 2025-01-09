@@ -16,11 +16,11 @@ class Menu {
   }
   createMenuContent() {
     // As we are switching tabs by replacing content div in body but page remains same.
-    // This means any CSS imported in index.js vs explicit CSS imports or from js modules
-    // imports indirectly are present on same page & can cause conflicts. So, 
-    // replacing other classes with the specific one for its style to take effect.
-    // In that specific class file, remember to use specific names for all elements to
-    // not conflict with general css files of page.
+    //  This means any CSS imported in index.js vs explicit CSS imports or from js modules
+    //  imports indirectly are present on same page & can cause conflicts. So, 
+    //  replacing other classes with the specific one for its style to take effect.
+    //  In that specific class file, remember to use specific names for all elements to
+    //  not conflict with general css files of page.
     document.getElementById('content').setAttribute('class', 'menu-con');
 
     let paraContainer = document.createElement('div')
@@ -46,8 +46,6 @@ class Menu {
 
   static #createCards() {
 
-    // let menuConEle = document.querySelector('.menu-con');
-
     const imagesObj = {
       'image1': image1,
       'image2': image2,
@@ -69,14 +67,14 @@ class Menu {
       card.setAttribute('class', 'card');
       cardContainer.appendChild(card);
 
-      Menu.#createCardLeftDiv(i, imagesObj);
+      Menu.#createCardLeftDiv(i, textObj, imagesObj);
       Menu.#createCardRightDiv(i, card);
 
       Menu.#addTextToCardRightDiv(textObj, i);
     }
   }
 
-  static #createCardLeftDiv(i, imagesObj) {
+  static #createCardLeftDiv(i, textObj, imagesObj) {
 
     const card = document.getElementById(`card${i}`);
     let cardLeftDiv = document.createElement('div');
@@ -85,8 +83,12 @@ class Menu {
 
     let image = document.createElement('img');
     image.setAttribute('class', 'menu-card-images');
-    // image.setAttribute('src', imagesObj[`image${i}`]);
     let imageSource = imagesObj[`image${i}`];
+
+    // image properties were not not loaded via CSS possibly(assumption at
+    // this point) because CSS is loaded before js & image was being loaded 
+    // via js. So adding image-repeat, image-position, background-size etc
+    //  properties via js: 
     image.style.background = `url(${imageSource}) no-repeat center center`;
     image.style.backgroundSize = 'cover';
     cardLeftDiv.appendChild(image);
@@ -97,7 +99,10 @@ class Menu {
     cardLeftDiv.appendChild(creditDiv);
     
     let creditTxt = document.createElement('p');
-    creditTxt.textContent = 'Credit';
+    
+    creditTxt.setAttribute('class', 'tooltip');
+    debugger;
+    creditTxt.innerHTML = `Credit<span class="tooltiptext">${textObj[`image${i}`][4]}</span>`;
     creditDiv.appendChild(creditTxt);
   }
 
