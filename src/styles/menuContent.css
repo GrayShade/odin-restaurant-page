@@ -7,9 +7,8 @@
   height: 95%;
   width: 100%;
   color: #69717a;
-  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   overflow: auto;
-  /* justify-items: center; */
   font-size: 1.5em;
 }
 
@@ -17,7 +16,6 @@
   padding: 0% 2.6rem;
   text-align: center;
 }
-
 
 .menu-con #card-container {
   display: grid;
@@ -89,15 +87,12 @@
 }
 
 .card-r-desc {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-top: 0.3rem;
 }
 
-.card-r-desc {
-  font-weight: lighter;
-}
-
 .card-r-title,
+.serving-span,
 .price-span,
 .avail-span {
   font-style: italic;
@@ -105,16 +100,17 @@
 }
 
 .card-r-title {
-  color: #f08080;
+  color: #d2691e;
   font-family: serif;
 }
 
+.serving-span,
 .price-span,
 .avail-span {
-  color: #8fbc8f;
+  color: #5f9ea0;
   font-weight: bold;
   font-family: monospace;
-  padding-right: 0.5rem;
+  padding-right: 0.7rem;
 }
 
 .tags-div {
@@ -141,7 +137,7 @@
 }
 
 /* Tooltip text */
-.tooltip .tooltiptext {
+.tooltip .tooltip-text {
   visibility: hidden;
   min-width: 12.5em;
   background-color: white;
@@ -159,11 +155,11 @@
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltip-text {
   visibility: visible;
 }
 
-.tooltip .tooltiptext::after {
+.tooltip .tooltip-text::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -174,7 +170,7 @@
   border-color: white transparent transparent transparent;
 }
 
-.tooltiptext a {
+.tooltip-text a {
   color: cadetblue;
 }
 

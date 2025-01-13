@@ -1,10 +1,8 @@
 import { styles } from "./styles/styles.css"
 import { reset } from "./styles/reset.css"
-// import {Home} from "./home.js";
 import { createHomeContent } from "./home.js";
-import { createMenuContent } from "./menu.js"
-// import { createCards } from "./menu.js"
-import { About } from "./about.js"
+import { createMenuContent } from "./menu.js";
+import { createContContent } from "./contact.js";
 
 class Controller {
 
@@ -20,7 +18,7 @@ class Controller {
 
   // setting up event listeners for tab switching logic:
   setUpEventListeners() {
-    
+
     let tabsArr = document.querySelectorAll('.tab-btn');
     tabsArr.forEach((tabBtn) => {
       tabBtn.addEventListener('click', (e) => {
@@ -36,12 +34,12 @@ class Controller {
             break;
           case 'menuTab-btn':
             createMenuContent();
-            //  createCards();
             break;
           case 'aboutTab-btn':
+            createContContent();
             break;
         };
-       
+
       });
     });
     // set it up when page loads first time:
@@ -65,18 +63,20 @@ class Controller {
     for (let i = 0; i < tabBtnsArr.length; i++) {
       // for styling current tab button:
       if (tabBtnsArr[i].id == currEleId) {
-        tabBtnsArr[i].style.background = '#add8e6';
+        tabBtnsArr[i].style.color = '#ffffff';
+        tabBtnsArr[i].style.background = '#808080';
       }
       // for styling menu tab button on clicking book button:
       else if (currEleId == 'home-booking-btn') {
-        tabBtnsArr[1].style.background = '#add8e6';
         tabBtnsArr[0].style.background = '';
-        tabBtnsArr[2].style.color = '#69717a';
+        tabBtnsArr[0].style.color = '#2f4f4f';
+        tabBtnsArr[1].style.color = '#ffffff';
+        tabBtnsArr[1].style.background = '#808080';
       }
-      // for styling current tab button:
+      // for styling non selected tab button:
       else {
         tabBtnsArr[i].style.background = '';
-        tabBtnsArr[i].style.color = '#69717a';
+        tabBtnsArr[i].style.color = '#2f4f4f';
       }
     }
   }

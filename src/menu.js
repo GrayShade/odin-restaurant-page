@@ -1,5 +1,4 @@
-// import styles from "./styles/styles.css"
-// import { reset } from "./styles/reset.css";
+// styles.css & reset.css are automatically imported as they have generic styles.
 import { menuContent } from "./styles/menuContent.css";
 import image1 from "./images/menu-images/1.jpg";
 import image2 from "./images/menu-images/2.jpg";
@@ -11,9 +10,7 @@ import image7 from "./images/menu-images/7.jpg";
 import image8 from "./images/menu-images/8.jpg";
 import image9 from "./images/menu-images/9.jpg";
 class Menu {
-  constructor() {
 
-  }
   createMenuContent() {
     // As we are switching tabs by replacing content div in body but page remains same.
     //  This means any CSS imported in index.js vs explicit CSS imports or from js modules
@@ -32,7 +29,6 @@ class Menu {
     paraContainer.appendChild(h1Ele);
 
     let p2Ele = document.createElement('p');
-    // p2Ele.setAttribute('id', 'menu-p');
     p2Ele.setAttribute('class', 'quote');
     p2Ele.textContent = `"The only time to eat diet food is while you're waiting for the steak to cook." - Julia Child`;
     paraContainer.appendChild(p2Ele);
@@ -97,12 +93,11 @@ class Menu {
     creditDiv.setAttribute('id', 'img-credit');
     creditDiv.setAttribute('class', 'img-credit');
     cardLeftDiv.appendChild(creditDiv);
-    
+
     let creditTxt = document.createElement('p');
-    
+
     creditTxt.setAttribute('class', 'tooltip');
-    debugger;
-    creditTxt.innerHTML = `Credit<span class="tooltiptext">${textObj[`image${i}`][4]}</span>`;
+    creditTxt.innerHTML = `Credit<span class="tooltip-text">${textObj[`image${i}`][4]}</span>`;
     creditDiv.appendChild(creditTxt);
   }
 
@@ -125,9 +120,27 @@ class Menu {
     tagsDiv.setAttribute('class', 'tags-div');
     cardRightDiv.appendChild(tagsDiv);
 
+    Menu.#createServingTagAndValue(i, tagsDiv);
     Menu.#createPriceTagAndValue(i, tagsDiv);
     Menu.#createAvailTagAndValue(i, tagsDiv);
 
+  }
+
+  static #createServingTagAndValue(i, tagsDiv) {
+    // Creating serving tag:
+    let cardRServing = document.createElement('p');
+    cardRServing.setAttribute('id', `card${i}-r-serving`);
+    cardRServing.setAttribute('class', 'card-r-serving');
+    tagsDiv.appendChild(cardRServing);
+
+    // Creating serving span & put 'Price' tag in it:
+    let cardRServingEle = document.querySelector(`#card${i}-r-serving`);
+    let cardRServingSpan = document.createElement('span');
+    cardRServingSpan.setAttribute('id', `card${i}-r-serving-span`);
+    cardRServingSpan.setAttribute('class', 'serving-span');
+    cardRServingEle.appendChild(cardRServingSpan);
+    let servingTitle = document.createTextNode('Serving: ');
+    cardRServingSpan.appendChild(servingTitle);
   }
 
   static #createPriceTagAndValue(i, tagsDiv) {
@@ -166,13 +179,17 @@ class Menu {
 
   static #addTextToCardRightDiv(textObj, i) {
 
+    let cardRServingSpan = document.getElementById(`card${i}-r-serving-span`);
     let cardRPriceSpan = document.getElementById(`card${i}-r-price-span`);
     let cardRAvailSpan = document.getElementById(`card${i}-r-avail-span`);
+
     document.getElementById(`card${i}-r-title`).textContent = textObj[`image${i}`][0];
     document.getElementById(`card${i}-r-desc`).textContent = textObj[`image${i}`][1];
-    let priceValue = document.createTextNode(textObj[`image${i}`][2]);
+    let servingValue = document.createTextNode(textObj[`image${i}`][2]);
+    cardRServingSpan.after(servingValue);
+    let priceValue = document.createTextNode(textObj[`image${i}`][3]);
     cardRPriceSpan.after(priceValue);
-    let availValue = document.createTextNode(textObj[`image${i}`][3]);
+    let availValue = document.createTextNode(textObj[`image${i}`][4]);
     cardRAvailSpan.after(availValue);
 
   }
@@ -182,6 +199,7 @@ class Menu {
       'image1': [
         'Fresh Juice',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+        '1 Per',
         '50 PKR',
         '20 min',
         'Photo by <a href="https://unsplash.com/@osamabgid?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">osama bgid</a> on <a href="https://unsplash.com/photos/orange-juice-in-clear-drinking-glass-pZ_slUF1YCc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
@@ -189,6 +207,7 @@ class Menu {
       'image2': [
         'Healthy Breakfast',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+        '2 Per',
         '50 PKR',
         '30 min',
         'Photo by <a href="https://unsplash.com/@tssskate?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Kate Tsventoukh 🇺🇦</a> on <a href="https://unsplash.com/photos/a-plate-of-food-and-a-cup-of-coffee-Xa0Dl96QgLs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
@@ -196,6 +215,7 @@ class Menu {
       'image3': [
         'Mix Beans',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+        '2 Per',
         '50 PKR',
         '40 min',
         'Photo by <a href="https://unsplash.com/@edgarraw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Odiseo Castrejon</a> on <a href="https://unsplash.com/photos/silver-spoon-on-black-ceramic-bowl-with-vegetables-1SPu0KT-Ejg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
@@ -203,6 +223,7 @@ class Menu {
       'image4': [
         'Zinger Burger',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+        '3 Per',
         '50 PKR',
         '20 min',
         'Photo by <a href="https://unsplash.com/@osamabgid?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">osama bgid</a> on <a href="https://unsplash.com/photos/cooked-food-on-white-ceramic-plate-HAnIYIboEMQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
@@ -210,6 +231,7 @@ class Menu {
       'image5': [
         'Soothing Coffee',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+        '1 Per',
         '50 PKR',
         '20 min',
         'Photo by <a href="https://unsplash.com/@brigittetohm?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Brigitte Tohm</a> on <a href="https://unsplash.com/photos/white-ceramic-mug-beside-green-leaves-yRH0JI2S2KA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
@@ -217,6 +239,7 @@ class Menu {
       'image6': [
         'Special Pizza',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+        '2 Per',
         '50 PKR',
         '20 min',
         'Photo by <a href="https://unsplash.com/@bahrambayat?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Bahram Bayat</a> on <a href="https://unsplash.com/photos/basil-and-cheese-pizza-5t4D2h3lZ74?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
@@ -224,6 +247,7 @@ class Menu {
       'image7': [
         'Mix Fries',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+        '3 Per',
         '50 PKR',
         '20 min',
         'Photo by <a href="https://unsplash.com/@pixzolo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Pixzolo Photography</a> on <a href="https://unsplash.com/photos/fries-and-ketchup-8YBHgP0WrEo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
@@ -231,6 +255,7 @@ class Menu {
       'image8': [
         'Chicken Nuggets',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+        '1 Per',
         '50 PKR',
         '20 min',
         'Photo by <a href="https://unsplash.com/@likemeat?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">LikeMeat</a> on <a href="https://unsplash.com/photos/fried-meat-with-green-vegetable-on-black-pan-xWm1DjCkUzU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
@@ -238,6 +263,7 @@ class Menu {
       'image9': [
         'Fresh Salad',
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.',
+        '2 Per',
         '50 PKR',
         '20 min',
         'Photo by <a href="https://unsplash.com/@dovilerm?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Dovile Ramoskaite</a> on <a href="https://unsplash.com/photos/strawberry-salad-plate-xX9SmqQCbFY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
@@ -254,8 +280,8 @@ class Menu {
 export const { createMenuContent } = new Menu();
 
 // Note that we are exporting a function after extracting it directly. We are NOT exporting
-//  an object. So, in index.js, we now have a function imported. One issue arrises, when we
-//  call << createMenuContent >> from index.js & we get inside the manu.js through that
+//  an object. So, in index.js, we now have a function imported. One issue arises, when we
+//  call << createMenuContent >> from index.js & we get inside the menu.js through that
 //  function, << this >> does not refer to object of menu.js as we came through a function
 // directly. So for workaround of that, I had to use static functions in Menu class as they
 //  are accessible on class itself so they can be accessed via Menu.functionName. Functions
