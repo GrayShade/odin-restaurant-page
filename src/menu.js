@@ -97,7 +97,7 @@ class Menu {
     let creditTxt = document.createElement('p');
 
     creditTxt.setAttribute('class', 'tooltip');
-    creditTxt.innerHTML = `Credit<span class="tooltip-text">${textObj[`image${i}`][4]}</span>`;
+    creditTxt.innerHTML = `Credit<span class="tooltip-text">${textObj[`image${i}`][5]}</span>`;
     creditDiv.appendChild(creditTxt);
   }
 

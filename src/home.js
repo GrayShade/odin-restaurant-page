@@ -1,5 +1,3 @@
-// import styles from "./styles/styles.css"
-// import { reset } from "./styles/reset.css"
 import { homeContent } from "./styles/homeContent.css"
 import img1 from "./images/1.jpg"
 import img2 from "./images/2.jpg"
