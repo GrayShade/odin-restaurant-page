@@ -2,13 +2,13 @@
 
 ## Description
 
-This is a simple restaurant frontend made using vanilla HTML, CSS & JS. It is part of [The Odin Project](https://www.theodinproject.com/). At the time of writing, link for this particular project is [Project: Restaurant Page](https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page).
+This is a simple restaurant frontend. It is part of [The Odin Project](https://www.theodinproject.com/). At the time of writing, link for this particular project is [Project: Restaurant Page](https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page).
 
 ## Working & Structure
 
-This project comprises standard front end technologies html, css & js. NPM and webpack as well as various NPM packages are required for it to work properly. It consists of a `src` directory containing project source code. `package.json` file contain list of required NPM modules & their versions. This file can also be used to download & install packages elsewhere where this project is cloned. `webpack.config.js` contains webpack related configurations. This project uses ES6 modules for multiple js files. `template.html` contains basic html template & is our main html file. Entry point file is `index.js` & other js files are its dependencies. Flow of program is controlled by `index.js`.
+This project comprises of standard front end technologies HTML, CSS & JS. webpack as well as NPM for various NPM packages are required for it to work properly. It consists of a `src` directory containing project source code. `package.json` file contain list of required NPM modules & their versions. This file can also be used to download & install packages elsewhere where this project is cloned. `webpack.config.js` contains webpack related configurations. This project uses ES6 modules for multiple js files. `template.html` contains basic html template & is our main html file. Entry point file is `index.js` & other js files are its dependencies. Flow of program is controlled by `index.js`.
 
-Required function from module of each tab is exported via ES6 modules but in code, home.js uses object constructor / prototype, menu.js uses static methods & class syntax. static methods are required because  contact.js uses pre ES6 module pattern(factory function inside IIFE). These approaches are not for any particular reason.
+Required function from module of each tab is exported via ES6 modules but in code, `home.js` uses object constructor / prototype, `menu.js` uses static methods & class syntax. Static methods are required because `contact.js` uses pre ES6 module pattern(factory function inside IIFE). These approaches are not for any particular reason.
 
  CSS styles are loaded via webpack & need specific modules first to be installed via npm & then configured via webpack. For debugging of webpack project on live server, webpack dev server package is installed via NPM. it can be started via terminal(cmd in my case) using:
 

@@ -1,16 +1,11 @@
 .home-con {
   display: flex;
-  height: 95%;
-  width: 100%;
   flex-direction: column;
-  color: #69717a;
   align-items: center;
   font-size: 1.5em;
   padding: 0% 20% 0%;
-  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   text-align: center;
   justify-content: space-between;
-  overflow: auto;
 }
 
 #home-booking-btn {
@@ -19,12 +14,12 @@
 }
 
 #home-images-div {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  justify-items: center;
 }
 
 .home-img {
-  width: 35%;
   height: auto;
   padding: 0% 0.3% 0.5% 0.3%;
   border-radius: 20px;
