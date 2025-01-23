@@ -1,10 +1,9 @@
-// you need to rerun << npx webpack serve >> for changes to take effect
-//  if changes are made to this file while dev server is running.
+// you need to restart dev server for changes to take effect
+//  if changes are made to webpack config file while dev server is running.
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
   // entry point file:
   entry: "./src/index.js",
   output: {
@@ -12,16 +11,6 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     // clean output directory before adding new files:
     clean: true,
-  },
-  // Without following option, source code in inspect option will not be untouched
-  //  source code. So will be harder to debug. Plus If we don’t do this, any error
-  //  messages we get won’t necessarily match up to the correct files and line numbers
-  //  from our development code
-  devtool: "eval-source-map",
-  // As html is not js, so dev server will not restart on changes made to it. So,
-  // adding it to watch list of dev server:
-  devServer: {
-    watchFiles: ["./src/template.html"],
   },
   plugins: [
     new HtmlWebpackPlugin({
