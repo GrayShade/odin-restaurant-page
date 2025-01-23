@@ -28,8 +28,10 @@ For importing this project, don't copy `node_modules` . This is why `package.jso
 
 ## Custom NPM Script commands
 
-- `npm run build`: Compiles the project in production mode using Webpack.
 - `npm run dev`: Compiles the project in development mode using Webpack.
+- `npm run checkout-and-merge`: to change branch and sync your changes from main so that you’re ready to deploy.
+- `npm run build`: Compiles the project in production mode using Webpack.
+- `npm run commit` Add output directory & commit changes to git.
 - `npm run deploy`: Deploy the project on github pages.
 
 ## Thoughts
