@@ -22,7 +22,6 @@ class Controller {
     let tabsArr = document.querySelectorAll('.tab-btn');
     tabsArr.forEach((tabBtn) => {
       tabBtn.addEventListener('click', (e) => {
-        console.log('in index.js listener...');
         this.applyCurrentTabStyle(e);
         this.clearContent();
         switch (e.target.id) {
